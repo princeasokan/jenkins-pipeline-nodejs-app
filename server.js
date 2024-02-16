@@ -9,6 +9,7 @@ app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
 app.use(routes)
 app.get('/healthcheck', (req, res) => {
+    console.log('gt u')
     res.send("success")
 })
 app.post('/login', (req, res) => {
