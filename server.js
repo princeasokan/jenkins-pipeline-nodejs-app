@@ -8,6 +8,9 @@ app.use(cors())
 app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
 app.use(routes)
+app.get('/healthcheck', (req, res) => {
+    res.send("success")
+})
 app.post('/login', (req, res) => {
     if (req.body.username == 'user1' && req.body.password == 'u123') {
         return res.json({ user: '', status: true })
